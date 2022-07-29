@@ -4,20 +4,30 @@ using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool isCubeSelected = false;
+    public bool isSphereSelected = false;
+    public bool isCapsuleSelected = false;
+    public Vector3 cubeTarget;
+    public Vector3 sphereTarget;
+    public Vector3 capsuleTarget;
+
+    public void SetTarget(Vector3 target)
     {
-        
+        if (isCapsuleSelected) {
+            capsuleTarget = target;
+        }
+        if (isSphereSelected) {
+            sphereTarget = target;
+        }
+        if (isCubeSelected) {
+            cubeTarget = target;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetSelected()
     {
-        
-    }
-
-    void OnMouseDown()
-    {
-        Debug.Log(gameObject.name);
+        isCapsuleSelected = false;
+        isCubeSelected = false;
+        isSphereSelected = false;
     }
 }
