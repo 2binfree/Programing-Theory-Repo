@@ -325,7 +325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504155778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.66, y: 0.43, z: -3.93}
+  m_LocalPosition: {x: -5.66, y: 0.6, z: -3.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -567,7 +567,10 @@ MonoBehaviour:
   isCubeSelected: 0
   isSphereSelected: 0
   isCapsuleSelected: 0
-  target: {x: 0, y: 0, z: 0}
+  cubeTarget: {x: 0, y: 0, z: 0}
+  sphereTarget: {x: 0, y: 0, z: 0}
+  capsuleTarget: {x: 0, y: 0, z: 0}
+  selectedEntity: {fileID: 0}
 --- !u!4 &756761277
 Transform:
   m_ObjectHideFlags: 0
@@ -758,7 +761,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010553855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.63, y: 0, z: -0.77}
+  m_LocalPosition: {x: -5.63, y: 0.1, z: -0.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1081,6 +1084,7 @@ GameObject:
   - component: {fileID: 1667326561}
   - component: {fileID: 1667326560}
   - component: {fileID: 1667326564}
+  - component: {fileID: 1667326565}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Entity
@@ -1159,7 +1163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667326559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.69, y: 0.106, z: 2.5}
+  m_LocalPosition: {x: -5.69, y: 0.1, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1178,6 +1182,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d1a724e7f2f05918662b1d6caa910e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  power: 200
+  moving: 0
+--- !u!54 &1667326565
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667326559}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1779663782
 GameObject:
   m_ObjectHideFlags: 0

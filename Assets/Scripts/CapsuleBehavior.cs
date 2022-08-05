@@ -8,23 +8,26 @@ public class CapsuleBehavior : EntityManager
     protected override void Start()
     {
         base.Start();
-        step = 1;
-        speed = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (mainManager.capsuleTarget != Vector3.zero && mainManager.capsuleTarget != gameObject.transform.position) {
+            Move();
+        }            
     }
     void OnMouseDown()
     {
         mainManager.ResetSelected();
         mainManager.isCapsuleSelected = !mainManager.isCapsuleSelected;
+        if (mainManager.isCapsuleSelected) {
+            mainManager.selectedEntity = gameObject;
+        }
     }
     
     override protected void Move()
     {
-        Debug.Log("capsule move");
+        transform.position = mainManager.capsuleTarget;
     }    
 }

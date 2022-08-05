@@ -20,8 +20,13 @@ public class FloorBehavior : EntityManager
     void OnMouseDown()
     {
         if (gameObject.CompareTag("Floor")) {
-            Vector3 mousePos = Input.mousePosition;
-            mainManager.SetTarget(cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane)));  
+            Vector3 mousePosition = Input.mousePosition;
+            Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hitData)) {
+                Vector3 target = hitData.point;
+                target.y = mainManager.selectedEntity.transform.position.y;
+                mainManager.SetTarget(target);  
+            }
         }
     }
 }

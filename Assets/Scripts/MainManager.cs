@@ -11,6 +11,13 @@ public class MainManager : MonoBehaviour
     public Vector3 sphereTarget;
     public Vector3 capsuleTarget;
 
+    public GameObject selectedEntity;
+
+    public void Start()
+    {
+        selectedEntity = new GameObject();
+    }
+
     public void SetTarget(Vector3 target)
     {
         if (isCapsuleSelected) {
