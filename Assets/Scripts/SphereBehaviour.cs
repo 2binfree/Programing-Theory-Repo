@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class SphereBehaviour : EntityManager
 {
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-        step = 1;
-        speed = 5;
+        Speed = 5;
     }
 
     // Update is called once per frame
@@ -26,12 +26,11 @@ public class SphereBehaviour : EntityManager
         if (mainManager.isSphereSelected) {
             mainManager.selectedEntity = gameObject;
         }
-
     }
     
     override protected void Move()
     {
-        var step =  speed * Time.deltaTime;
+        float step =  Speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, mainManager.sphereTarget, step);
     }    
 }

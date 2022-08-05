@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class CubeBehavior : EntityManager
 {
     public float power = 500.0f;
@@ -44,6 +45,7 @@ public class CubeBehavior : EntityManager
         rb.velocity = force;
     }
 
+    // ABSTRACTION
     Vector3 CalcBallisticVelocityVector(Vector3 source, Vector3 target, float angle)
     {
          Vector3 direction = target - source;                            
